@@ -1,0 +1,15 @@
+{
+  "name": "arubaale-api-connection",
+  "version": "1.1.0",
+  "description": "Handle Aruba ALE events and establish an api connection to it.",
+  "main": "subber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Esteban Vanegas",
+  "license": "ISC",
+  "dependencies": {
+    "protobufjs": "^6.9.0",
+    "zeromq": "^6.0.0-beta.5"
+  }
+}

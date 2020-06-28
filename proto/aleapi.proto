@@ -1,0 +1,106 @@
+/**
+*   ALE 2.0.0.x Version proto file
+*   Most ALE proto properties was not loaded here, this file was made to gives you an example
+*   about ALE events and message structure. You can change this file and use it on your own code.
+*/
+
+syntax = "proto3";
+package aleapi; //Change this as needed
+
+message ip_address {
+    enum addr_family {
+         ADDR_FAMILY_UNSPEC = 0; 
+         ADDR_FAMILY_INET = 2;   // Internet IP Protocol
+         ADDR_FAMILY_INET6 = 10; // IP version 6
+    }
+    required addr_family af = 1;
+    required bytes addr = 2;
+}
+
+message mac_address {
+    required bytes addr = 1; // 6 bytes
+}
+
+message radio {
+    enum radio_mode {
+         RADIO_MODE_AP = 0;
+         RADIO_MODE_MESH_PORTAL = 1; 
+         RADIO_MODE_MESH_POINT = 2;
+         RADIO_MODE_AIR_MONITOR = 3;
+         RADIO_MODE_SPECTRUM_SENSOR = 4;
+         RADIO_MODE_UNKNOWN = 5;
+    }
+
+    enum phy_type {
+         PHY_TYPE_80211B = 0; 
+         PHY_TYPE_80211A = 1; 
+         PHY_TYPE_80211G = 2;
+    }
+
+    enum ht_type {
+         HTT_NONE = 0;
+         HTT_20MZ = 1;
+         HTT_40MZ = 2;
+         HTT_VHT_20MZ = 3;
+         HTT_VHT_40MZ = 4;
+         HTT_VHT_80MZ = 5;
+    }
+
+    optional mac_address ap_eth_mac = 1;
+    optional mac_address radio_bssid = 2;
+    optional radio_mode mode = 4;
+    optional phy_type phy = 5;
+    optional ht_type ht = 6;
+}
+
+message presence {
+    enum target_dev_type{
+        TARGET_TYPE_UNKNOWN = 0;
+        TARGET_TYPE_STATION = 1;
+        TARGET_TYPE_TAG = 2;
+        TARGET_TYPE_UNSECURE = 3;
+    }
+    optional mac_address sta_eth_mac = 1;
+    optional bool associated = 2;
+    optional bytes hashed_sta_eth_mac = 3;
+    optional string ap_name = 4;
+    optional mac_address radio_mac = 5;
+    optional target_dev_type target_type = 6;
+}
+
+message access_point {
+    enum deployment_mode {
+        DEPLOYMENT_MODE_CAMPUS = 0;
+        DEPLOYMENT_MODE_REMOTE = 1;
+    }
+
+    optional mac_address ap_eth_mac = 1;
+    optional string ap_name = 2;
+    optional string ap_group = 3;
+    optional string ap_model = 4;
+    optional deployment_mode depl_mode = 5;
+    optional ip_address ap_ip_address = 6;
+    optional uint32 reboots = 7;
+    optional uint32 rebootstraps = 8;
+    optional ip_address managed_by = 9;
+    optional string managed_by_key = 10;
+    repeated radio radios = 11;
+    optional bool is_master = 12;
+    optional string reboot_reason = 13;
+}
+
+message nb_event {
+    enum event_operation {
+        OP_ADD = 0;
+        OP_UPDATE = 1;
+        OP_DELETE = 2;
+    }
+    optional uint64 seq =1;
+    optional uint32 timestamp = 2;
+    optional event_operation op = 3;
+    optional uint64 topic_seq = 4;
+    optional bytes source_id = 5;
+    // One of the following is populated depending on the topic
+    optional presence presence = 501;
+    optional access_point access_point = 514;
+}
