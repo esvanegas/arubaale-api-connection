@@ -1,14 +1,14 @@
 # arubaale-api-connection
 ### Introduction
- This code purpose was based on show how to establish and handle events of Aruba ALE API. But could be use to other projects related with ZeroMQ or ProtoBuffers.
+ This code's purpose was based on how to establish and handle events of Aruba ALE API. But could be used to other projects related to ZeroMQ or ProtoBuffers.
  
 ## Initial steps
 ### Pre - requirements
- Before continue your ALE server must be able to recieve events, to know that log into your ALE server and type the following command
+ Before continuing your ALE server must be able to receive events, to know that, login into your ALE server and type the following command:
  ```bash
  /opt/ale/bin/feed-reader
  ```
- If you can see events data, your server is working to establish the connection, if is not the case please dig into the problem and refer to [Aruba Airheads Community](http://community.arubanetworks.com)
+ If you can see events data, your server is prepared to establish the connection. If is not the case please dig into the problem and refer to [Aruba Airheads Community](http://community.arubanetworks.com)
  
  ### Installation method
  To run the code please clone the repo and execute the following command:
