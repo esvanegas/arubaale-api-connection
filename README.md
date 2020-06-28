@@ -11,7 +11,7 @@
  If you can see events data, your server is prepared to establish the connection. If is not the case please dig into the problem and refer to [Aruba Airheads Community](http://community.arubanetworks.com)
  
  ### Installation method
- To run the code please clone the repo and execute the following command:
+ To be able to run the code, please clone the repo and execute the following command:
   ```bash
  npm install
  ```
