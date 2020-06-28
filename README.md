@@ -1,6 +1,6 @@
-# arubaale-api-connection
+# Aruba ALE api connection using NodeJS
 ### Introduction
- This code's purpose was based on how to establish and handle events of Aruba ALE API. But could be used to other projects related to ZeroMQ or ProtoBuffers.
+ This code's purpose was based on how to establish and handle events of Aruba ALE API. But could be used to other projects related to ZeroMQ or ProtoBuffers in NodeJS.
  
 ## Initial steps
 ### Pre - requirements
