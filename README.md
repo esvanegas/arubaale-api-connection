@@ -18,5 +18,5 @@
  It is important to change the *Aruba ALE IP* on the *subber.js* file.
  
  ## Annexes
- [ALE example - @pthornycroft] https://github.com/pthornycroft/ALE-Demonstrator-2
- [ALE sample code feed reader - Airheads] https://community.arubanetworks.com/t5/Aruba-Apps/Sample-java-code-for-ALE-feed-reader-protobuf-over-ZMQ/td-p/261481
+ 1. [ALE example - @pthornycroft](https://github.com/pthornycroft/ALE-Demonstrator-2)
+ 2. [ALE sample code feed reader - Airheads](https://community.arubanetworks.com/t5/Aruba-Apps/Sample-java-code-for-ALE-feed-reader-protobuf-over-ZMQ/td-p/261481)
